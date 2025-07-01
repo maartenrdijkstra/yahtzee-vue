@@ -19,7 +19,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Enen</td>
                 <td class="text-align-right">Tel alle Enen</td>
-                <td class="upper">{{ enen }}</td>
+                <td class="upper">{{ ones }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -29,7 +29,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Tweeën</td>
                 <td class="text-align-right">Tel alle Tweeën</td>
-                <td class="upper">{{ tweeen }}</td>
+                <td class="upper">{{ twos }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -39,7 +39,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Drieën</td>
                 <td class="text-align-right">Tel alle Drieën</td>
-                <td class="upper">{{ drieen }}</td>
+                <td class="upper">{{ threes }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -49,7 +49,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Vieren</td>
                 <td class="text-align-right">Tel alle Vieren</td>
-                <td class="upper">{{ vieren }}</td>
+                <td class="upper">{{ fours }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -59,7 +59,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Vijven</td>
                 <td class="text-align-right">Tel alle Vijven</td>
-                <td class="upper">{{ vijven }}</td>
+                <td class="upper">{{ fives }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -69,7 +69,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Zessen</td>
                 <td class="text-align-right">Tel alle Zessen</td>
-                <td class="upper">{{ zessen }}</td>
+                <td class="upper">{{ sixes }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -80,7 +80,7 @@
                 <td class="text-align-left">Totaal</td>
                 <td class="text-align-right">aantal punten</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="upper">0</td>
+                <td class="upper">{{ totalUpperMinusBonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -91,7 +91,7 @@
                 <td class="text-align-left">Bonus</td>
                 <td class="text-align-right">Als puntentotaal 63 of meer is</td>
                 <td class="text-align-right">35 punten</td>
-                <td class="upper">0</td>
+                <td class="upper">{{ bonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -102,7 +102,7 @@
                 <th class="text-align-left">Totaal</th>
                 <th class="text-align-right">van de bovenste helft</th>
                 <th class="text-align-right">&rightarrow;</th>
-                <th class="upper">0</th>
+                <th class="upper">{{ totalUpperPlusBonus }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -113,8 +113,8 @@
             <tr>
                 <td class="text-align-left">Three of a kind</td>
                 <td class="text-align-right">3 dezelfde</td>
-                <td class="text-align-right">Totaal v.d. 5 stenen</td>
-                <td class="lower">0</td>
+                <td class="text-align-right">Totaal v.d. 3 stenen</td>
+                <td class="lower">{{ threeOfAKind }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -124,8 +124,8 @@
             <tr>
                 <td class="text-align-left">Carré</td>
                 <td class="text-align-right">4 dezelfde</td>
-                <td class="text-align-right">Totaal v.d. 5 stenen</td>
-                <td class="lower">0</td>
+                <td class="text-align-right">Totaal v.d. 4 stenen</td>
+                <td class="lower">{{ fourOfAKind }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -136,7 +136,7 @@
                 <td class="text-align-left">Full House</td>
                 <td class="text-align-right">2 + 3 dezelfde</td>
                 <td class="text-align-right">25 punten</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ fullHouse }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -147,7 +147,7 @@
                 <td class="text-align-left">Kleine straat</td>
                 <td class="text-align-right">4 opeenvolgende nummers</td>
                 <td class="text-align-right">30 punten</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ smallStraight }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -158,7 +158,7 @@
                 <td class="text-align-left">Grote straat</td>
                 <td class="text-align-right">5 opeenvolgende nummers</td>
                 <td class="text-align-right">40 punten</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ largeStraight }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -169,7 +169,7 @@
                 <td class="text-align-left">Topscore</td>
                 <td class="text-align-right">5 dezelfde</td>
                 <td class="text-align-right">50 punten</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ topScore }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -180,7 +180,7 @@
                 <td class="text-align-left">Chance</td>
                 <td class="text-align-right">vrije keus</td>
                 <td class="text-align-right">Totaal v.d. 5 stenen</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ chance }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -191,7 +191,7 @@
                 <td class="text-align-left"><strong>Totaal</strong></td>
                 <td class="text-align-right">van de onderste helft</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ totalLower }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -202,7 +202,7 @@
                 <td class="text-align-left"><strong>Totaal</strong></td>
                 <td class="text-align-right">van de bovenste helft</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="lower">0</td>
+                <td class="lower">{{ totalUpperPlusBonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -212,7 +212,7 @@
             <tr>
                 <th class="text-align-left" colspan="2">Totaal Generaal</th>
                 <th class="text-align-right">&rightarrow;</th>
-                <th class="lower">0</th>
+                <th class="lower">{{ totalGeneral }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -224,12 +224,11 @@
 </template>
 
 <script setup>
-import {ref, computed} from 'vue';
+import {ref, computed, watch} from 'vue';
 const dice = defineModel();
+const diceArray = ref([]);
 
-let diceArr = [];
-
-const count = ref({
+let count = ref({
     1: 0,
     2: 0,
     3: 0,
@@ -238,40 +237,70 @@ const count = ref({
     6: 0,
 });
 
-function fillScoreFields(count, diceArr) {
-    let totalUpperMinusBonusScore = 0;
-    for (let i = 1; i <= 6; i++) {
-        totalUpperMinusBonusScore += Number(count[i] * i);
-    }
-    totalUpperMinusBonus.textContent = totalUpperMinusBonusScore;
+watch(
+    dice,
+    () => {
+        diceArray.value = [...dice.value];
 
-    if (totalUpperMinusBonusScore >= 63) {
-        bonus.textContent = 35;
-    } else {
-        bonus.textContent = 0;
-    }
+        const newCount = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+        };
 
-    totalUpperPlusBonus.textContent = totalUpperMinusBonusScore + Number(bonus.textContent);
+        console.log(diceArray.value);
+        for (const d of diceArray.value) {
+            if (newCount[d] !== undefined) {
+                newCount[d]++;
+            }
+        }
+        count.value = newCount;
+        console.log(count);
+    },
+    {deep: true},
+);
 
-    let totalLowerPartScore = 0;
-    for (field of lowerFields) {
-        totalLowerPartScore += Number(field.textContent);
-    }
-    totalLowerPart.textContent = totalLowerPartScore;
+const ones = computed(() => count.value[1] * 1);
+const twos = computed(() => count.value[2] * 2);
+const threes = computed(() => count.value[3] * 3);
+const fours = computed(() => count.value[4] * 4);
+const fives = computed(() => count.value[5] * 5);
+const sixes = computed(() => count.value[6] * 6);
+const totalUpperMinusBonus = computed(
+    () => ones.value + twos.value + threes.value + fours.value + fives.value + sixes.value,
+);
+const bonus = computed(() => (totalUpperMinusBonus.value >= 63 ? 35 : 0));
+const totalUpperPlusBonus = computed(() => (totalUpperMinusBonus.value >= 63 ? totalUpperMinusBonus.value + 35 : 0));
+const threeOfAKind = computed(() => (xOfAKind(3) || xOfAKind(4) || xOfAKind(5) ? countTotalEyes() : 0));
+const fourOfAKind = computed(() => (xOfAKind(4) || xOfAKind(5) ? countTotalEyes() : 0));
+const fullHouse = computed(() => (checkFullHouse() ? 25 : 0));
+const smallStraight = computed(() => (checkStraight(4) || checkStraight(5) ? 30 : 0));
+const largeStraight = computed(() => (checkStraight(5) ? 40 : 0));
+const topScore = computed(() => (xOfAKind(5) ? 50 : 0));
+const chance = computed(() => countTotalEyes());
+const totalLower = computed(
+    () =>
+        threeOfAKind.value +
+        fourOfAKind.value +
+        fullHouse.value +
+        smallStraight.value +
+        largeStraight.value +
+        topScore.value +
+        chance.value,
+);
+const totalGeneral = computed(() => totalUpperPlusBonus.value + totalLower.value);
 
-    totalUpperPlusBonus2.textContent = totalUpperPlusBonus.textContent;
-
-    totalGeneral.textContent = Number(totalLowerPart.textContent) + Number(totalUpperPlusBonus2.textContent);
+function countTotalEyes() {
+    return diceArray.value.reduce((acc, currValue) => acc + currValue, 0);
 }
 
-function countTotalEyes(diceArr) {
-    return diceArr.reduce((acc, currValue) => acc + currValue);
-}
-
-function checkFullHouse(diceArr) {
+function checkFullHouse() {
     const countSameEyes = {};
-    for (const dice of diceArr) {
-        countSameEyes[dice] = (countSameEyes[dice] || 0) + 1;
+    for (const d of diceArray.value) {
+        countSameEyes[d] = (countSameEyes[d] || 0) + 1;
     }
 
     const values = Object.values(countSameEyes).sort((a, b) => a - b);
@@ -280,20 +309,20 @@ function checkFullHouse(diceArr) {
 }
 
 function xOfAKind(numberToSearchFor) {
-    for (dice in count) {
-        if (count[dice] === numberToSearchFor) {
+    for (let d in count.value) {
+        if (count.value[d] === numberToSearchFor) {
             return true;
         }
     }
     return false;
 }
 
-function checkStraight(count, seriesTotal) {
+function checkStraight(seriesTotal) {
     let teller = 0;
-    console.log(count);
+    console.log(count.value);
 
-    for (dice in count) {
-        if (count[dice] > 0) {
+    for (const d in count.value) {
+        if (count.value[d] > 0) {
             teller++;
         } else {
             teller = 0;
@@ -304,50 +333,7 @@ function checkStraight(count, seriesTotal) {
     }
     return false;
 }
-const throwDice = () => {
-    let thrownDice = 0;
-
-    for (let index in count.value) {
-        count.value[index] = 0;
-    }
-
-    for (let i = 0; i < 5; i++) {
-        thrownDice = Math.trunc(Math.random() * 6) + 1;
-
-        diceArr.push(thrownDice);
-
-        count.value[thrownDice]++;
-    }
-
-    console.table(count.value);
-};
-
-const enen = computed(() => {
-    console.log(count[1]);
-    return Number(count[1] * 1);
-});
-
-const tweeen = computed(() => {
-    return Number(count[2] * 1);
-});
-
-const drieen = computed(() => {
-    return Number(count[3] * 1);
-});
-
-const vieren = computed(() => {
-    return Number(count[4] * 1);
-});
-
-const vijven = computed(() => {
-    return Number(count[5] * 1);
-});
-
-const zessen = computed(() => {
-    return Number(count[6] * 1);
-});
 </script>
-
 <style>
 .container {
     margin: 10px 10px 0 16px;
