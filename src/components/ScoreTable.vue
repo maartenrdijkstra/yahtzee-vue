@@ -16,60 +16,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="text-align-left" colspan="2">Enen</td>
-                <td class="text-align-right">Tel alle Enen</td>
-                <td>{{ ones }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-align-left" colspan="2">Tweeën</td>
-                <td class="text-align-right">Tel alle Tweeën</td>
-                <td>{{ twos }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-align-left" colspan="2">Drieën</td>
-                <td class="text-align-right">Tel alle Drieën</td>
-                <td>{{ threes }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-align-left" colspan="2">Vieren</td>
-                <td class="text-align-right">Tel alle Vieren</td>
-                <td>{{ fours }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-align-left" colspan="2">Vijven</td>
-                <td class="text-align-right">Tel alle Vijven</td>
-                <td>{{ fives }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-align-left" colspan="2">Zessen</td>
-                <td class="text-align-right">Tel alle Zessen</td>
-                <td>{{ sixes }}</td>
+            <tr v-for="(score, key) in singleScores" :key="key">
+                <td class="text-align-left" colspan="2">{{ numberWords[key] }}</td>
+                <td class="text-align-right">Tel alle {{ numberWords[key] }}</td>
+                <td>{{ score }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -224,54 +174,62 @@
 </template>
 
 <script setup>
-import {ref, computed, watch} from 'vue';
+import {ref, computed} from 'vue';
 const dice = defineModel();
-const diceArray = ref([]);
 
-let count = ref({
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0,
+const numberWords = ref({
+    1: 'Enen',
+    2: 'Tweeën',
+    3: 'Drieën',
+    4: 'Vieren',
+    5: 'Vijven',
+    6: 'Zessen',
 });
 
-watch(
-    dice,
-    () => {
-        diceArray.value = [...dice.value];
+const count = computed(() => {
+    const countObj = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0,
+    };
 
-        const newCount = {
-            1: 0,
-            2: 0,
-            3: 0,
-            4: 0,
-            5: 0,
-            6: 0,
-        };
+    dice.value.forEach(dice => {
+        countObj[dice]++;
+    });
 
-        console.log(diceArray.value);
-        for (const d of diceArray.value) {
-            if (newCount[d] !== undefined) {
-                newCount[d]++;
-            }
-        }
-        count.value = newCount;
-        console.log(count);
-    },
-    {deep: true},
-);
+    return countObj;
+});
 
-const ones = computed(() => count.value[1] * 1);
-const twos = computed(() => count.value[2] * 2);
-const threes = computed(() => count.value[3] * 3);
-const fours = computed(() => count.value[4] * 4);
-const fives = computed(() => count.value[5] * 5);
-const sixes = computed(() => count.value[6] * 6);
+const singleScores = computed(() => {
+    const countObj = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0,
+    };
+
+    Object.keys(count.value).forEach(key => {
+        countObj[key] = count.value[key] * key;
+    });
+
+    return countObj;
+});
+
 const totalUpperMinusBonus = computed(
-    () => ones.value + twos.value + threes.value + fours.value + fives.value + sixes.value,
+    () =>
+        singleScores.value[1] +
+        singleScores.value[2] +
+        singleScores.value[3] +
+        singleScores.value[4] +
+        singleScores.value[5] +
+        singleScores.value[6],
 );
+
 const bonus = computed(() => (totalUpperMinusBonus.value >= 63 ? 35 : 0));
 const totalUpperPlusBonus = computed(() => (totalUpperMinusBonus.value >= 63 ? totalUpperMinusBonus.value + 35 : 0));
 const threeOfAKind = computed(() => (xOfAKind(3) || xOfAKind(4) || xOfAKind(5) ? countTotalEyes() : 0));
@@ -294,12 +252,12 @@ const totalLower = computed(
 const totalGeneral = computed(() => totalUpperPlusBonus.value + totalLower.value);
 
 function countTotalEyes() {
-    return diceArray.value.reduce((acc, currValue) => acc + currValue, 0);
+    return dice.value.reduce((acc, currValue) => acc + currValue, 0);
 }
 
 function checkFullHouse() {
     const countSameEyes = {};
-    for (const d of diceArray.value) {
+    for (const d of dice.value) {
         countSameEyes[d] = (countSameEyes[d] || 0) + 1;
     }
 
