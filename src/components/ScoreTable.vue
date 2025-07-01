@@ -231,7 +231,9 @@ const totalUpperMinusBonus = computed(
 );
 
 const bonus = computed(() => (totalUpperMinusBonus.value >= 63 ? 35 : 0));
-const totalUpperPlusBonus = computed(() => (totalUpperMinusBonus.value >= 63 ? totalUpperMinusBonus.value + 35 : 0));
+const totalUpperPlusBonus = computed(() =>
+    totalUpperMinusBonus.value >= 63 ? totalUpperMinusBonus.value + bonus.value : totalUpperMinusBonus.value,
+);
 const threeOfAKind = computed(() => (xOfAKind(3) || xOfAKind(4) || xOfAKind(5) ? countTotalEyes() : 0));
 const fourOfAKind = computed(() => (xOfAKind(4) || xOfAKind(5) ? countTotalEyes() : 0));
 const fullHouse = computed(() => (checkFullHouse() ? 25 : 0));
@@ -249,7 +251,7 @@ const totalLower = computed(
         topScore.value +
         chance.value,
 );
-const totalGeneral = computed(() => totalUpperPlusBonus.value + totalLower.value);
+const totalGeneral = computed(() => +(totalUpperPlusBonus.value + totalLower.value));
 
 function countTotalEyes() {
     return dice.value.reduce((acc, currValue) => acc + currValue, 0);
