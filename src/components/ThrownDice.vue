@@ -9,8 +9,6 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
-
 const dice = defineModel();
 
 const rollDice = () => {
