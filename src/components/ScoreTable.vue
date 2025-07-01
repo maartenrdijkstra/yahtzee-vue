@@ -19,7 +19,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Enen</td>
                 <td class="text-align-right">Tel alle Enen</td>
-                <td class="upper">{{ ones }}</td>
+                <td>{{ ones }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -29,7 +29,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Tweeën</td>
                 <td class="text-align-right">Tel alle Tweeën</td>
-                <td class="upper">{{ twos }}</td>
+                <td>{{ twos }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -39,7 +39,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Drieën</td>
                 <td class="text-align-right">Tel alle Drieën</td>
-                <td class="upper">{{ threes }}</td>
+                <td>{{ threes }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -49,7 +49,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Vieren</td>
                 <td class="text-align-right">Tel alle Vieren</td>
-                <td class="upper">{{ fours }}</td>
+                <td>{{ fours }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -59,7 +59,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Vijven</td>
                 <td class="text-align-right">Tel alle Vijven</td>
-                <td class="upper">{{ fives }}</td>
+                <td>{{ fives }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -69,7 +69,7 @@
             <tr>
                 <td class="text-align-left" colspan="2">Zessen</td>
                 <td class="text-align-right">Tel alle Zessen</td>
-                <td class="upper">{{ sixes }}</td>
+                <td>{{ sixes }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -80,7 +80,7 @@
                 <td class="text-align-left">Totaal</td>
                 <td class="text-align-right">aantal punten</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="upper">{{ totalUpperMinusBonus }}</td>
+                <td>{{ totalUpperMinusBonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -91,7 +91,7 @@
                 <td class="text-align-left">Bonus</td>
                 <td class="text-align-right">Als puntentotaal 63 of meer is</td>
                 <td class="text-align-right">35 punten</td>
-                <td class="upper">{{ bonus }}</td>
+                <td>{{ bonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -102,7 +102,7 @@
                 <th class="text-align-left">Totaal</th>
                 <th class="text-align-right">van de bovenste helft</th>
                 <th class="text-align-right">&rightarrow;</th>
-                <th class="upper">{{ totalUpperPlusBonus }}</th>
+                <th>{{ totalUpperPlusBonus }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -114,7 +114,7 @@
                 <td class="text-align-left">Three of a kind</td>
                 <td class="text-align-right">3 dezelfde</td>
                 <td class="text-align-right">Totaal v.d. 3 stenen</td>
-                <td class="lower">{{ threeOfAKind }}</td>
+                <td>{{ threeOfAKind }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -125,7 +125,7 @@
                 <td class="text-align-left">Carré</td>
                 <td class="text-align-right">4 dezelfde</td>
                 <td class="text-align-right">Totaal v.d. 4 stenen</td>
-                <td class="lower">{{ fourOfAKind }}</td>
+                <td>{{ fourOfAKind }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -136,7 +136,7 @@
                 <td class="text-align-left">Full House</td>
                 <td class="text-align-right">2 + 3 dezelfde</td>
                 <td class="text-align-right">25 punten</td>
-                <td class="lower">{{ fullHouse }}</td>
+                <td>{{ fullHouse }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -147,7 +147,7 @@
                 <td class="text-align-left">Kleine straat</td>
                 <td class="text-align-right">4 opeenvolgende nummers</td>
                 <td class="text-align-right">30 punten</td>
-                <td class="lower">{{ smallStraight }}</td>
+                <td>{{ smallStraight }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -158,7 +158,7 @@
                 <td class="text-align-left">Grote straat</td>
                 <td class="text-align-right">5 opeenvolgende nummers</td>
                 <td class="text-align-right">40 punten</td>
-                <td class="lower">{{ largeStraight }}</td>
+                <td>{{ largeStraight }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -169,7 +169,7 @@
                 <td class="text-align-left">Topscore</td>
                 <td class="text-align-right">5 dezelfde</td>
                 <td class="text-align-right">50 punten</td>
-                <td class="lower">{{ topScore }}</td>
+                <td>{{ topScore }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -180,7 +180,7 @@
                 <td class="text-align-left">Chance</td>
                 <td class="text-align-right">vrije keus</td>
                 <td class="text-align-right">Totaal v.d. 5 stenen</td>
-                <td class="lower">{{ chance }}</td>
+                <td>{{ chance }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -191,7 +191,7 @@
                 <td class="text-align-left"><strong>Totaal</strong></td>
                 <td class="text-align-right">van de onderste helft</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="lower">{{ totalLower }}</td>
+                <td>{{ totalLower }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -202,7 +202,7 @@
                 <td class="text-align-left"><strong>Totaal</strong></td>
                 <td class="text-align-right">van de bovenste helft</td>
                 <td class="text-align-right">&rightarrow;</td>
-                <td class="lower">{{ totalUpperPlusBonus }}</td>
+                <td>{{ totalUpperPlusBonus }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -212,7 +212,7 @@
             <tr>
                 <th class="text-align-left" colspan="2">Totaal Generaal</th>
                 <th class="text-align-right">&rightarrow;</th>
-                <th class="lower">{{ totalGeneral }}</th>
+                <th>{{ totalGeneral }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
